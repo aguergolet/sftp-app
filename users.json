@@ -1,0 +1,14 @@
+{ 
+    "users" : 
+    [ 
+        {
+            "uid" : "sample01",
+            "pubkey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDAj9pL1dNHPL4Pj2flTdK6HUisd/qaPL2A8Df4jRrgl/jKH0xSmykjf6ZCT/+1fIPvYca9tv9wYHVzIj+roQPOCSWlUQJuvrOFHG0DYj+GpTpJ+irIsoIv+gNmrqXCoXmEdEWKGXnBQwKQGd36lQn1n3/2rA3mb5w3cFdcDNooSPTmb9i5OQwnt86bTmeKWDjnNorPRrrDZgDFm9dK1jb/o7GpUWqhDkIsUezpJ2N1YA1hmnb5kH9r1I9t69250pbgGjhSDCIBFclvrNWInHT6rghnboMnYuV3x/ZGs/133Z7ZRwOjVTaOIkvjXAazwMJDqpv6fpHDq7Li4PpqqaoCrMSZ/vusHZFPTxg3WfSu8TjuwWSDZ94j2Cezct0SmzfWVICJJu4JlQqIDBS46aIJgvvBCNYaXJGXmvtPWXbRHpxkdd4+Kr5WfXHDFfQFmMGaANdFytVBbUVCJdvYXm8EQME8IBj0193RFnnABvbM5Ad4XwoT77yGrRbzff6aWLs= andre@guergolet"
+        },
+        {
+            "uid" : "user02",
+            "pubkey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCiqoQtGsOxNZdx8jjJ7iNLQT+Ukrg+ihEXgevgjBn5n0HbklQvGGe3DQQZC6QdFC2kT5T+HFSeQruvVIYToM9mezwoKLa/dBh59wBj3klWnTC+adYLnWXEH0lgy5YgbOg8sGyZcNyxduaNRtyZIwV05Ic+WqQbM8WnV2AsX+eZRw+QXta9y7P5syn9E+9joekacgfz68mN1FZz7zOS4jBA+0hB41RWISEwU8osFLDlc73nu+DH0ZhVxVHrmW8Tw7a+HpjLY5yRJsWUhDHBk5AKFr9Q4VpU/Wt1/L4hEONBZj/swORt/Ny9Ay2WwBho3NNb3QE0n0pj6Lx/o/7MEmQXJVTk92Revd+7gnx7164sON/FYIjXq4Ej1rWjL7XgEH9k8yzlQHsOI4lzEm/ReAKkQlejHWD1ic2sJWNNE3nMI8/zwaZXiFL8sZkcfAl4umptN/9VYZWbQdF0UgguJ4jb9J7AR9J5X+1sIA/WN0P291hrbhSWdk6f7PNUsU0f6S8= andre@guergolet"
+        }
+
+    ]
+}
