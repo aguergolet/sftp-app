@@ -5,4 +5,5 @@ while IFS=, read -r col1 col2
 do 
     $1/configuser.sh "$col1" "$col2"
 done  < $1/user_config.csv
-/usr/sbin/sshd -D 
+echo "starting sshd"
+/usr/sbin/sshd -D  -E /app/sshd.log

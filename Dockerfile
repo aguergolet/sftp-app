@@ -1,8 +1,9 @@
 FROM alpine
 USER root
 RUN addgroup sftponly
-RUN apk add openssh openrc jq
+RUN apk add openssh openrc jq rsyslog
 RUN rc-update add sshd
+RUN rc-update add rsyslog boot
 RUN rc-status 
 RUN ssh-keygen -A
 COPY ./sshd_config /etc/ssh/sshd_config
