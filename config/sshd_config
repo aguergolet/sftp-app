@@ -1,51 +1,16 @@
-# Package generated configuration file
-# See the sshd_config(5) manpage for details
-
-# What ports, IPs and protocols we listen for
 Port 22000
 UseDNS no
-# Use these options to restrict which interfaces/protocols sshd will bind to
-#ListenAddress ::
 ListenAddress 0.0.0.0
-#Protocol 2
-# HostKeys for protocol version 2
-#HostKey /etc/ssh/ssh_host_rsa_key
-#HostKey /etc/ssh/ssh_host_dsa_key
-#HostKey /etc/ssh/ssh_host_ecdsa_key
-#HostKey /etc/ssh/ssh_host_ed25519_key
-#Privilege Separation is turned on for security
-#UsePrivilegeSeparation yes
-
 Ciphers aes128-cbc,3des-cbc,aes192-cbc,aes256-cbc,chacha20-poly1305@openssh.com,aes128-ctr,aes192-ctr,aes256-ctr,aes128-gcm@openssh.com,aes256-gcm@openssh.com
-
-# Lifetime and size of ephemeral version 1 server key
-#KeyRegenerationInterval 3600
-#ServerKeyBits 1024
-
 # Logging
 SyslogFacility AUTH
-LogLevel INFO
-
-# Authentication:
-#LoginGraceTime 120
-#PermitRootLogin prohibit-password
-#StrictModes yes
+LogLevel DEBUG3
 
 #RSAAuthentication yes
 PubkeyAuthentication yes
-AuthorizedKeysFile     %h/.ssh/authorized_keys
-
-# Don't read the user's ~/.rhosts and ~/.shosts files
-#IgnoreRhosts yes
-# For this to work you will also need host keys in /etc/ssh_known_hosts
-#RhostsRSAAuthentication no
-# similar for protocol version 2
-#HostbasedAuthentication no
-# Uncomment if you don't trust ~/.ssh/known_hosts for RhostsRSAAuthentication
-#IgnoreUserKnownHosts yes
-
-# To enable empty passwords, change to yes (NOT RECOMMENDED)
-#PermitEmptyPasswords no
+AuthorizedKeysFile .ssh/authorized_keys
+PasswordAuthentication no
+IgnoreUserKnownHosts yes
 
 # Change to yes to enable challenge-response passwords (beware issues with
 # some PAM modules and threads)
@@ -88,7 +53,8 @@ ChallengeResponseAuthentication no
 # If you just want the PAM account and session checks to run without
 # PAM authentication, then enable this but set PasswordAuthentication
 # and ChallengeResponseAuthentication to 'no'.
-#UsePAM yes
+
+UsePAM yes
 Subsystem sftp internal-sftp -l INFO
 Match group ftpaccess
     ChrootDirectory %h
