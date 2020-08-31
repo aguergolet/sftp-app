@@ -24,4 +24,6 @@ chown -R $1:$1 /home/$1/.ssh
 chmod 700 /home/$1/.ssh
 chmod 600 /home/$1/.ssh/authorized_keys
 
+echo "$1 hard nproc $4" >> /etc/security/limits.conf
+
 echo "User created"
