@@ -7,8 +7,8 @@ adduser $1 ftpaccess
 chown -R root:root /home/$1
 chmod 755 /home/$1
 
-mkdir /home/$1/in
-mkdir /home/$1/out
+mkdir -p /home/$1/in
+mkdir -p /home/$1/out
 
 
 
@@ -20,6 +20,7 @@ chmod 755 /home/$1/in
 
 mkdir -p /home/$1/.ssh
 echo "$2" > /home/$1/.ssh/authorized_keys
+
 chown -R $1:$1 /home/$1/.ssh
 chmod 700 /home/$1/.ssh
 chmod 600 /home/$1/.ssh/authorized_keys
