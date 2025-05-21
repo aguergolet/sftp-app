@@ -1,5 +1,6 @@
 FROM alpine
 USER root
+RUN groupadd appgroup && useradd -ms /bin/bash -g appgroup appuser
 RUN addgroup ftpaccess
 RUN apk update
 RUN apk add sshguard nftables
@@ -21,8 +22,9 @@ COPY ./scripts/nftables_config.sh nftables_config.sh
 COPY ./scripts/entrypoint.sh entrypoint.sh
 COPY ./scripts/configuser.sh configuser.sh
 
-RUN  touch /app/sshguard.log
-RUN touch /app/sshd.log
+RUN chown -R appuser:appgroup /app
+RUN touch /app/sshguard.log /app/sshd.log && chown appuser:appgroup /app/sshguard.log /app/sshd.log
+USER appuser
 
 
 EXPOSE 22000

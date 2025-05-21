@@ -1,11 +1,10 @@
 #!/usr/sbin/nft -f
 
-# TODO: Review, just an internet sample.
 flush ruleset
 
 # Interfaces and Networks
 define wan = eth0
-define lan = eth0
+define ssh_port = 22000
 
 table ip filter {
   chain input {
@@ -20,8 +19,8 @@ table ip filter {
     # Allow All Loopback Traffic
     meta iif lo ct state new accept
 
-    # Allow LAN Inbound Traffic
-    meta iif $lan ct state new accept
+    # Allow SSH
+    tcp dport $ssh_port ct state new accept
 
     # Respond to ICMP Echo Requests Only
     icmp type echo-request accept
@@ -33,11 +32,7 @@ table ip filter {
   chain forward {
     type filter hook forward priority 0; policy drop;
 
-    # Allow LAN Traffic out the WAN Interface
-    meta iif $lan meta oif $wan accept
-
-    # Allow Related Traffic
-    meta iif $wan meta oif $lan ct state established,related accept
+    # No forwarding needed for a dedicated SFTP server
   }
 
   chain output {
